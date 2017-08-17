@@ -6,6 +6,7 @@
 declare module "web3" {
   import { BigNumber } from "bignumber.js";
   import { Definition as AbiDefinition } from "web3/abi";
+  import { ParsedLog } from "web3/parsed";
 
   type BlockNumberOrHash = number | string;
 
@@ -29,7 +30,7 @@ declare module "web3" {
       export type SignCallback = (err: any, signed: string) => void;
       export type CallCallback = (err: any, result: string) => void;
       export type EstimateGasCallback = (err: any, gasEstimation: number) => void;
-      export type FilterCallback = (err: any, result: string | Web3.Log) => void;
+      export type FilterCallback = (err: any, result: string | Web3.Log | ParsedLog<any, any>) => void;
       export type GetListeningCallback = (err: any, listening: boolean) => void;
       export type GetPeerCountCallback = (err: any, peerCount: number) => void;
       export type GetCompilerCallback = (err: any, compilers: string[]) => void;
